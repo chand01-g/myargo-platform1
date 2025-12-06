@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: webapp-helm-dev
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - env: dev
+
+  template:
+    metadata:
+      name: webapp-{{env}}       # = webapp-dev
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/chand01-g/myargocd_platform.git
+        targetRevision: main
+        path: charts/webapp
+        helm:
+          valueFiles:
+            - values-{{env}}.yaml # = values-dev.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: webapp-dev
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+
