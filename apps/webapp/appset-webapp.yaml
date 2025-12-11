@@ -23,7 +23,7 @@ spec:
             - values-{{env}}.yaml # = values-dev.yaml
       destination:
         server: https://kubernetes.default.svc
-        namespace: webapp-dev
+        namespace: webapp-{{env}}
       syncPolicy:
         automated:
           prune: true
