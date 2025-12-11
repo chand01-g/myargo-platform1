@@ -11,11 +11,11 @@ spec:
 
   template:
     metadata:
-      name: webapp-{{env}}       # = webapp-dev
+      name: webapp-helm-{{env}}       # = webapp-dev
     spec:
       project: default
       source:
-        repoURL: https://github.com/chand01-g/myargocd_platform.git
+        repoURL: https://github.com/chand01-g/myargo-platform1.git
         targetRevision: main
         path: charts/webapp
         helm:
