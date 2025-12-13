@@ -1,0 +1,9 @@
+service:
+  port: 80
+
+ingress:
+  enabled: false
+  className: nginx
+  host: webapp.local
+  path: /
+  annotations: {}

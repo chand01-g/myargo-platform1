@@ -1,1 +1,6 @@
 replicaCount: 2
+ingress:
+  enabled: true
+  className: nginx
+  host: webapp-prod.local
+  path: /
