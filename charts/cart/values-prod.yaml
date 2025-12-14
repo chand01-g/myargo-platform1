@@ -1,0 +1,6 @@
+replicaCount: 2
+ingress:
+  enabled: true
+  className: nginx
+  host: cart-prod.local
+  path: /
