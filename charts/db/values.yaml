@@ -1,0 +1,6 @@
+service:
+  port: 5432
+postgres:
+  user: app
+  password: app123
+  db: appdb

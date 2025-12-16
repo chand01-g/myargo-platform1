@@ -1,19 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster1-root
+  name: db-dev
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
     repoURL: https://github.com/chand01-g/myargo-platform1.git
     targetRevision: main
-    path: apps-waves           # <--- POINTS TO apps/
+    path: charts/db
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
+    syncOptions:
+      - CreateNamespace=true
