@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/chand01-g/myargo-platform1.git
     targetRevision: main
-    path: apps-waves           # <--- POINTS TO apps/
+    path: apps           # <--- POINTS TO apps/
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
