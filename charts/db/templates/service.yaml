@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: db
 spec:
+  clusterIP: None           # 👈 headless
   selector:
     app: db
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: 5432
+    - port: 5432
+

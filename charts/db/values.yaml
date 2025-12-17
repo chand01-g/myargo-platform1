@@ -1,6 +1,14 @@
-service:
-  port: 5432
+replicaCount: 1
+
+image:
+  repository: postgres
+  tag: "16"
+
 postgres:
   user: app
   password: app123
-  db: appdb
+  database: appdb
+
+persistence:
+  enabled: true
+  size: 1Gi
