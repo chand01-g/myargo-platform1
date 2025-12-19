@@ -11,3 +11,6 @@ ingress:
   className: nginx
   host: webapp-dev.local
   path: /
+probes:
+  readiness:
+    path: /wrong
