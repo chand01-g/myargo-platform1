@@ -15,3 +15,22 @@ ingress:
   host: webapp.local
   path: /
   annotations: {}
+probes:
+  readiness:
+    path: /
+    initialDelaySeconds: 3
+    periodSeconds: 5
+    timeoutSeconds: 2
+    failureThreshold: 3
+
+  liveness:
+    path: /
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 2
+    failureThreshold: 3
+
+  startup:
+    path: /
+    periodSeconds: 5
+    failureThreshold: 12   # 12*5=60s startup window
