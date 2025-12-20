@@ -31,6 +31,7 @@ probes:
     failureThreshold: 3
 
   startup:
+    enabled: false
     path: /
     periodSeconds: 5
     failureThreshold: 12   # 12*5=60s startup window

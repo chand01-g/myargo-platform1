@@ -17,3 +17,10 @@ probes:
 probes:
   liveness:
     path: /
+probes:
+  startup:
+    enabled: true
+    path: /
+    port: 80
+    failureThreshold: 30
+    periodSeconds: 2
