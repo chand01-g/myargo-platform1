@@ -20,7 +20,7 @@ probes:
 probes:
   startup:
     enabled: true
-    path: /
+    path: /we
     port: 80
     failureThreshold: 30
     periodSeconds: 2
