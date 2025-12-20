@@ -13,7 +13,7 @@ ingress:
   path: /
 probes:
   readiness:
-    path: /
+    path: /qq
 probes:
   liveness:
     path: /
