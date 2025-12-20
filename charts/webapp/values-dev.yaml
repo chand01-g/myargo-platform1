@@ -16,4 +16,4 @@ probes:
     path: /
 probes:
   liveness:
-    path: /
+    path: /wt
