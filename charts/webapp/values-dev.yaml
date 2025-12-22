@@ -14,7 +14,7 @@ ingress:
 probes:
   readiness:
     enabled: true
-    path: /qq
+    path: /
 probes:
   liveness:
     path: /
