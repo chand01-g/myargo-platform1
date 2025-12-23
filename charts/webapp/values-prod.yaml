@@ -1,4 +1,6 @@
 replicaCount: 2
+image:
+  tag: "1.25"  #Blue verision
 resources:
   requests:
     cpu: 200m

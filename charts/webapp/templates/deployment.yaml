@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: webapp
 spec:
@@ -48,4 +48,8 @@ spec:
             failureThreshold: {{ .Values.probes.startup.failureThreshold }}
             periodSeconds: {{ .Values.probes.startup.periodSeconds }}
           {{- end }}
-
+  strategy:
+    blueGreen:
+      activeService: webapp-active
+      previewService: webapp-preview
+      autoPromotionEnabled: false
