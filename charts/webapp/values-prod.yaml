@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 image:
   tag: "1.26"  #Green verision
 resources:
@@ -10,7 +10,7 @@ resources:
     memory: 512Mi
 hpa:
   enabled: false
-  minReplicas: 3
+  minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 70
 ingress:
