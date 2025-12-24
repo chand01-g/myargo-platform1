@@ -16,7 +16,7 @@ spec:
         - name: webapp
           image: nginx
           ports:
-            - containerPort: 81
+            - containerPort: 80
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}
