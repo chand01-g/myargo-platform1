@@ -1,4 +1,4 @@
-replicaCount: 3
+replicaCount: 4
 image:
   tag: "1.26"  #Green verision
 resources:
