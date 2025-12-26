@@ -19,7 +19,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: webapp-active
+                name: webapp-stable
                 port:
                   number: {{ .Values.service.port }}
 {{- end }}
