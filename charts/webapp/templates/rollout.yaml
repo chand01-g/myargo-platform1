@@ -50,15 +50,15 @@ spec:
           {{- end }}
           env:
             - name: WELCOME_MSG
-                valueFrom:
-                  configMapKeyRef:
-                    name: webapp-config
-                    key: WELCOME_MSG
+              valueFrom:
+                configMapKeyRef:
+                  name: webapp-config
+                  key: WELCOME_MSG
             - name: DB_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: webapp-secret
-                    key: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: DB_PASSWORD
 
   strategy:
     canary:
