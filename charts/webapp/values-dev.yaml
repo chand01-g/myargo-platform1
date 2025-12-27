@@ -25,3 +25,8 @@ probes:
     port: 80
     failureThreshold: 30
     periodSeconds: 2
+config:
+  WELCOME_MSG: "hello from dev"
+secret:
+  DB_PASSWORD: "devpass"
+

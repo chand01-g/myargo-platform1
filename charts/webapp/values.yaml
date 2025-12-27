@@ -38,3 +38,9 @@ probes:
     path: /
     periodSeconds: 5
     failureThreshold: 12   # 12*5=60s startup window
+config:
+  WELCOME_MSG: "hello from webapp"
+
+secret:
+  DB_PASSWORD: ""   # empty by default
+

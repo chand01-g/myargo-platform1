@@ -18,3 +18,7 @@ ingress:
   className: nginx
   host: webapp-prod.local
   path: /
+config:
+  WELCOME_MSG: "hello from prod"
+secret:
+  DB_PASSWORD: "prodpass"
