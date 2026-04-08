@@ -24,4 +24,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: CHAND1950/secure-sre-app:latest
+        tags: chand1950/secure-sre-app:latest
