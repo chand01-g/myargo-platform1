@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-sre-deployment
+spec:
+  # 1. The Desired State: We want 3 identical containers running for high availability
+  replicas: 3
+  selector:
+    matchLabels:
+      app: telecom-frontend
+  template:
+    metadata:
+      labels:
+        app: telecom-frontend
+    spec:
+      containers:
+      - name: web-container
+        # 2. The Artifact: Pulling your exact image from your automated CI pipeline
+        image: chand1950/secure-sre-app:latest
+        resources:
+          requests:
+            cpu: "200m"      # Guaranteed 0.25 CPU cores
+            memory: "80Mi"  # Guaranteed 256 MiB of RAM
+          limits:
+            cpu: "250m"      # Maximum 0.5 CPU cores
+            memory: "250Mi"  # Maximum 512 MiB of RAM
+        ports:
+        - containerPort: 80
